@@ -31,7 +31,7 @@ while (numero > 0) {
 // 16% 4 = 0 - en 16 tenemos 4 * 4
 // 19% 4 = 3 - en 19 tenemos 4 * 4 + 3, etc.
 
-
+/*
 function esMultiploDe3(numero) {
     if (numero % 3 === 0) {
         return true;
@@ -57,7 +57,7 @@ for (let i = 1; i < 51; i++) {
         console.log(i);
     }
 }
-
+*/
 // Calcular el promedio de todos los números en un array de números. (y ponerlo en una función)
 // ej.: calcularPromedio([10,5,4,2,8])
 
