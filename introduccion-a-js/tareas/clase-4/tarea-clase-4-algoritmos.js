@@ -149,7 +149,7 @@ function maximo(a,b){
 }
 
 /*
-Desafío de programación #14: Imprimir los primeros 10 dígitos de Fibonacci sin recursión
+#14 Desafío de programación #14: Imprimir los primeros 10 dígitos de Fibonacci sin recursión
 
 Fibonacci (lo buscan en google si no lo saben o no se acuerdan)
 El resultado debería ser: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
