@@ -129,8 +129,6 @@ function cel(n){
   console.log(n);
 }
 
-/*
-
 #10 Desafío de programación #10: Calcula la suma de todos los números en un array de números
 
 Ya lo hice en otro lado.
@@ -141,14 +139,24 @@ Ya lo hice en otro lado.
 
 #12 Desafío de programación #12: Crea una función que reciba un array de números y devuelva un array conteniendo solo los números positivos
 
-#13 Desafío de programación #13: Find the maximum number in an array of numbers
-*/
+let numeros = [-3,-20,-152,99,14]
 
-function maximo(a,b){
-    
+function soloPositivos(arrayOriginal){
+  let nuevoArray = [];
+  for (let i = 0; i < arrayOriginal.length; i++) {
+    if (arrayOriginal[i] > 0) {
+      nuevoArray.push(arrayOriginal[i]);  
+    }    
+  }
+  console.log(nuevoArray);  
 }
 
-/*
+soloPositivos(numeros);
+
+#13 Desafío de programación #13: Find the maximum number in an array of numbers
+
+
+
 #14 Desafío de programación #14: Imprimir los primeros 10 dígitos de Fibonacci sin recursión
 
 Fibonacci (lo buscan en google si no lo saben o no se acuerdan)
