@@ -31,15 +31,15 @@ while (numero > 0) {
 // 16% 4 = 0 - en 16 tenemos 4 * 4
 // 19% 4 = 3 - en 19 tenemos 4 * 4 + 3, etc.
 
-/*
-function esMultiploDe3(numero){
+
+function esMultiploDe3(numero) {
     if (numero % 3 === 0) {
         return true;
     }
     return false;
 }
 
-function esMultiploDe5(numero){
+function esMultiploDe5(numero) {
     if (numero % 5 === 0) {
         return true;
     }
@@ -47,19 +47,16 @@ function esMultiploDe5(numero){
 }
 
 for (let i = 1; i < 51; i++) {
-    if (esMultiploDe3(i)) {
-        if (esMultiploDe5(i)) {
-            console.log("FizzBuz");    
-        } else {
-            console.log("Fizz");
-        }
+    if (esMultiploDe3(i) && esMultiploDe5(i)) {
+        console.log("FizzBuzz");
+    } else if (esMultiploDe3(i)) {
+        console.log("Fizz");
     } else if (esMultiploDe5(i)) {
         console.log("Buzz");
     } else {
         console.log(i);
-    }    
+    }
 }
-*/
 
 // Calcular el promedio de todos los números en un array de números. (y ponerlo en una función)
 // ej.: calcularPromedio([10,5,4,2,8])
@@ -68,11 +65,11 @@ for (let i = 1; i < 51; i++) {
 let arrayNumeros = [1,5,10,65,123,11];
 
 function calcularPromedio(arreglo) {
-    let suma = 0;       
+    let suma = 0;
     for (let i = 0; i < arreglo.length; i++) {
         suma = suma + arreglo[i];
     }
-    return (suma / arreglo.length).toFixed(2);    
+    return (suma / arreglo.length).toFixed(2);
 }
 
 console.log(`El promedio de (${arrayNumeros}) es ${calcularPromedio(arrayNumeros)}.`)
