@@ -154,7 +154,6 @@ function soloPositivos(arrayOriginal){
 soloPositivos(numeros);
 
 #13 Desafío de programación #13: Find the maximum number in an array of numbers
-*/
 
 let numeros = [-10, -20, 25, 98, -140, -15, 47, -57]
 
