@@ -124,10 +124,8 @@
 //       variable llamada nuestroTitulo.
 //       Utilizá console.log para ver lo que obtuviste!
 
-
-
-
-
+const nuestroTitulo = document.querySelector("h1");
+console.log(nuestroTitulo);
 
 /*
     Obteniendo elementos similares.
@@ -146,26 +144,19 @@
 
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
-
-
-
-
+const mediaLinks = document.querySelectorAll("li");
 
 // TAREA: Ahora utilizá console.log para ver la cantidad de 
 // elementos li que hay con mediaLinks.length
 
-
-
-
-
+console.log(mediaLinks.length);
 
 // TAREA: ¿Te acordás de los bucles del nivel 2? Usando lo que sabés de ellos, realizá iteraciones
 //      sobre cada item de mediaLinks y mostralos en pantalla con console.log
 
-
-
-
-
+for (let i = 0; i < mediaLinks.length; i++) {
+    console.log(mediaLinks[i]);    
+}
 
 /*
     Propiedades de los elementos
@@ -184,10 +175,7 @@
 // TAREA: Obtené el contenido de nuestro elemento 'h1'
 // y utilizá console.log para mostrarlo.
 
-
-
-
-
+console.log(nuestroTitulo.innerText);
 
 /*
     Editar el contenido de la página
@@ -205,8 +193,9 @@
 
 // TAREA: Hagamos un nuevo título! Cambiá el contenido de nuestro 'h1' y ponele lo que quieras.
 
-
-
+const nuevoTitulo = document.querySelector("h1");
+nuevoTitulo.textContent = "Bienvenidos!";
+console.log(nuevoTitulo.textContent);
 
 
 /*
@@ -218,14 +207,13 @@
     Ejemplo:
 
     const nuestroTwitter = document.querySelector('.twitter');
-    ourTwitter.id = "sorpresa";
+    nuestroTwitter.id = "sorpresa";
 */
 
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
-
-
-
+const nuevaImg = document.querySelector("img");
+nuevaImg.src = "img/kittens.jpeg";
 
 
 /*
@@ -248,9 +236,8 @@
 
 // Tarea: Obtené cualquier elemento de la página y cambiale algunos estilos.
 
-
-
-
+nuevoTitulo.style.color = "red";
+nuevoTitulo.style.backgroundColor = "black";
 
 
 /*
@@ -278,10 +265,10 @@
 //
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
 
-
-
-
-
+const nodoPagina = document.querySelector("header");
+const nuevoLogo = document.createElement("img");
+nodoPagina.appendChild(nuevoLogo);
+nuevoLogo.src = "img/woman_bw.jpg";
 
 ////////////////////////////////////////////////////////////////////////////
 // ¡Felicidades! ¡Has terminado el Nivel 3 de JavaScript Básico!          //
