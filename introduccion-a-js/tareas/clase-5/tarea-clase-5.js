@@ -30,7 +30,7 @@ const pesos = "$"
 $botonCalcular.onclick = function(){
   const $salarioAnual = document.getElementById("salario-anual").value;
   salarioMensual = $salarioAnual / 12;  
-  $salarioMensual.value = pesos + salarioMensual.toFixed(2);
+  $salarioMensual.value = pesos + Number(salarioMensual.toFixed(2));
 }
 
 
