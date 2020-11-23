@@ -7,13 +7,14 @@ input{
 }
 body{
     background-color: rebeccapurple;
-    height: 200px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
 }
 
 div{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+	display: flex;
+	justify-content: center;
     flex-direction: column;
     height: 100%;
 }
