@@ -22,7 +22,7 @@ let $nombre = document.querySelector("#nombre");
 let $segundoNombre = document.querySelector("#segundoNombre");
 let $apellido = document.querySelector("#apellido");
 let $edad = document.querySelector("#edad");
-let $bienvenida = document.querySelector("#bienvenida");
+const $bienvenida = document.querySelector("#bienvenida");
 
 
 $botonCalcular.onclick = function(){
