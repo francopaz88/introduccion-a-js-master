@@ -12,23 +12,28 @@ let $horas = document.querySelectorAll(".horas");
 let $minutos = document.querySelectorAll(".minutos");
 let $segundos = document.querySelectorAll(".segundos");
 
+function sumarTiempo(array){
+    suma = 0;
+    for (let i = 0; i < array.length; i++) {
+        suma = suma + Number(array[i].value);        
+    }
+    return suma;
+}
 
-$botonCalcular.onclick = function() {
-    let sumaH = 0;
-    let sumaM = 0;
-    let sumaS = 0;
+function conviertoEnSegundos(horas, minutos, segundos){
+    return totalSegundos = horas * 3600 + minutos * 60 + segundos;
+}
 
-    for (let i = 0; i < $horas.length; i++) {
-        sumaH = sumaH + Number($horas[i].value);
-    }
-    for (let i = 0; i < $minutos.length; i++) {
-        sumaM = sumaM + Number($minutos[i].value);
-    }
-    for (let i = 0; i < $segundos.length; i++) {
-        sumaS = sumaS + Number($segundos[i].value);
-    }
-    
-    $resultado.innerHTML = "La duración total de las clases es: <br> Horas: " + sumaH + "<br>" + "Minutos: " + sumaM + "<br>" + "Segundos: " + sumaS; 
+function resultado(tiempo){
+    horas = Math.floor(tiempo / 3600);
+    minutos = Math.floor(tiempo / 60 ) % 60;
+    segundos = tiempo % 60;
+    return resultadoFinal = [horas, minutos, segundos];
+}
+
+$botonCalcular.onclick = function(){    
+    resultado(conviertoEnSegundos(sumarTiempo($horas),sumarTiempo($minutos),sumarTiempo($segundos)));
+    $resultado.innerHTML = "La duración total de las clases es: <br> Horas: " + resultadoFinal[0] + "<br>" + "Minutos: " + resultadoFinal[1]  + "<br>" + "Segundos: " + resultadoFinal[2]; 
 
     return false;
 }
