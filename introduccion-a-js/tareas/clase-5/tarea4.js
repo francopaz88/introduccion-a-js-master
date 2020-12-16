@@ -58,7 +58,7 @@ NumeroMayor($valores);
 $mayor.innerHTML = "El número mayor es " + mayor;
 
 ///////////////////////////////////////////////////////////////////
-
+/*
 function numeroRepetido(array){
     contador = 0;
     for (let i = 0; i < array.length; i++) {
@@ -75,7 +75,7 @@ function numeroRepetido(array){
 }
 
 numeroRepetido($valores);
-
+*/
 // funcion calcularNumeroMasFrecuente(array):
 // numeroMasFrecuente;
 // maximasRepeticiones = 0;
@@ -88,3 +88,28 @@ numeroRepetido($valores);
 //     numeroMasFrecuente = numeroActual
 //     maximasRepeticiones = repeticionesActuales
 // devolver numeroMasFrecuente
+
+function calcularNumeroFrecuente(array){
+    let numeroMasFrecuente = 0;
+    let repeticionesActuales = 0;
+    let maximasRepeticiones = 0;
+    for (let i = 0; i < array.length; i++) {
+        numeroActual = array[i].textContent;
+        for (let j = 0; j < array.length; j++) {
+            otroNumeroActual = array[j].textContent;
+            if (otroNumeroActual === numeroActual) {
+                repeticionesActuales++;
+            }
+        }
+        if (repeticionesActuales > maximasRepeticiones) {
+            numeroMasFrecuente = numeroActual;
+            maximasRepeticiones = repeticionesActuales;
+            repeticionesActuales = 0;
+        }
+        
+    }
+    console.log(numeroMasFrecuente);
+    console.log(maximasRepeticiones);
+}
+
+calcularNumeroFrecuente($valores);
