@@ -15,7 +15,7 @@ let $repetido = document.querySelector("#repetido");
 function promedio(array){
     suma = 0;
     for (let i = 0; i < array.length; i++) {
-        suma = suma + Number(array[i].innerHTML);  
+        suma = suma + Number(array[i].textContent);  
     }
     total = suma / array.length;
     return total;
@@ -23,7 +23,7 @@ function promedio(array){
 
 promedio($valores);
 
-$promedio.innerHTML = "El promedio es " + total.toFixed(2);
+$promedio.textContent = "El promedio es " + total.toFixed(2);
 
 ///////////////////////////////////////////////////////////////////
 
@@ -39,15 +39,15 @@ function NumeroMenor(array){
 
 NumeroMenor($valores);
 
-$menor.innerHTML = "El número menor es " + menor;
+$menor.textContent = "El número menor es " + menor;
 
 ///////////////////////////////////////////////////////////////////
 
 function NumeroMayor(array){
-    mayor = Number(array[0].innerHTML);
+    mayor = Number(array[0].textContent);
     for (let i = 0; i < array.length; i++) {
-        if (mayor < Number(array[i].innerHTML)) {
-            mayor = Number(array[i].innerHTML);
+        if (mayor < Number(array[i].textContent)) {
+            mayor = Number(array[i].textContent);
         }            
     }
     return mayor;
@@ -55,7 +55,7 @@ function NumeroMayor(array){
 
 NumeroMayor($valores);
 
-$mayor.innerHTML = "El número mayor es " + mayor;
+$mayor.textContent = "El número mayor es " + mayor;
 
 ///////////////////////////////////////////////////////////////////
 /*
@@ -63,8 +63,8 @@ function numeroRepetido(array){
     contador = 0;
     for (let i = 0; i < array.length; i++) {
         for (let j = i+1; j < array.length; j++) {
-            if (Number(array[i].innerHTML) == Number(array[j].innerHTML)) {
-                console.log(array[i].innerHTML);                
+            if (Number(array[i].textContent) == Number(array[j].textContent)) {
+                console.log(array[i].textContent);                
                 contador++;
             };
             
@@ -90,7 +90,7 @@ numeroRepetido($valores);
 // devolver numeroMasFrecuente
 
 function calcularNumeroFrecuente(array){
-    let numeroMasFrecuente = 0;
+    numeroMasFrecuente = 0;
     let repeticionesActuales = 0;
     let maximasRepeticiones = 0;
     for (let i = 0; i < array.length; i++) {
@@ -106,10 +106,12 @@ function calcularNumeroFrecuente(array){
             maximasRepeticiones = repeticionesActuales;
             repeticionesActuales = 0;
         }
+        repeticionesActuales = 0;
         
     }
-    console.log(numeroMasFrecuente);
-    console.log(maximasRepeticiones);
+    return numeroMasFrecuente;
 }
 
 calcularNumeroFrecuente($valores);
+
+$repetido.textContent = "El número más frecuente es " + numeroMasFrecuente;
