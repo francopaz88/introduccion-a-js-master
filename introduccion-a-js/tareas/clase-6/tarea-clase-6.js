@@ -11,7 +11,9 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 const $siguiente = document.querySelector("#siguiente");
 const $div = document.createElement("div");
 const $formulario = document.querySelector("#formulario");
-
+const $calcular = document.createElement("button");
+let edades = [];
+let $em = document.querySelector("em");
 
 $siguiente.onclick = function(){
     let $cantidadIntegrantes = document.querySelector("#cantidadIntegrantes").value;    
@@ -20,14 +22,37 @@ $siguiente.onclick = function(){
         $label.textContent = "Integrante #" + [i+1];
         const $input = document.createElement("input");
         $input.type = "number";
-        $input.className = "edades";
+        $input.className = "familiares";
         $formulario.appendChild($label);
         $formulario.appendChild($input);        
     }
-        
+    $calcular.textContent = "Calcular!";
+    $formulario.appendChild($calcular);          
     return false;
-
 }
+
+
+function numeroMayor(array){
+    mayor = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (mayor < array[i]) {
+            mayor = array[i];
+        }
+    }
+    return mayor;
+}
+
+
+$calcular.onclick = function(){
+    $familiares = document.querySelectorAll(".familiares");
+    for (let i = 0; i < $familiares.length; i++) {
+        edades.push(Number($familiares[i].value));      
+    }
+    numeroMayor(edades);
+    $em.textContent = "El integrante mas viejo tiene " + mayor + " años."
+    return false;
+}
+
 
 
 
