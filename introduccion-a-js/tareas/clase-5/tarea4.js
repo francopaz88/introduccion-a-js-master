@@ -58,24 +58,6 @@ NumeroMayor($valores);
 $mayor.textContent = "El número mayor es " + mayor;
 
 ///////////////////////////////////////////////////////////////////
-/*
-function numeroRepetido(array){
-    contador = 0;
-    for (let i = 0; i < array.length; i++) {
-        for (let j = i+1; j < array.length; j++) {
-            if (Number(array[i].textContent) == Number(array[j].textContent)) {
-                console.log(array[i].textContent);                
-                contador++;
-            };
-            
-        };
-        
-    }
-    console.log(contador);
-}
-
-numeroRepetido($valores);
-*/
 // funcion calcularNumeroMasFrecuente(array):
 // numeroMasFrecuente;
 // maximasRepeticiones = 0;
