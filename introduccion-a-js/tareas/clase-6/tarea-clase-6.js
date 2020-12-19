@@ -5,15 +5,13 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente la mayor edad
 
 Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuevamente, borrando los inputs ya creados (investigar cómo en MDN).
 */
-//document.body.appendChild($div);
-//const $div = document.createElement("div");
 
 const $siguiente = document.querySelector("#siguiente");
-const $div = document.createElement("div");
 const $formulario = document.querySelector("#formulario");
 const $calcular = document.createElement("button");
 let edades = [];
 let $em = document.querySelector("em");
+const $restart = document.createElement("button");
 
 $siguiente.onclick = function(){
     let $cantidadIntegrantes = document.querySelector("#cantidadIntegrantes").value;    
@@ -27,10 +25,12 @@ $siguiente.onclick = function(){
         $formulario.appendChild($input);        
     }
     $calcular.textContent = "Calcular!";
-    $formulario.appendChild($calcular);          
+    $formulario.appendChild($calcular);
+    $restart.textContent = "Empezar de nuevo!";
+    $formulario.appendChild($restart);
+
     return false;
 }
-
 
 function numeroMayor(array){
     mayor = array[0];
@@ -42,6 +42,25 @@ function numeroMayor(array){
     return mayor;
 }
 
+function numeroMenor(array){
+    menor = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (menor > array[i]) {
+            menor = array[i];
+        }
+    }
+    return menor;
+}
+
+function numeroPromedio(array){
+    promedio = 0;
+    for (let i = 0; i < array.length; i++) {
+        promedio = promedio + array[i];
+    }
+    promedio = promedio / array.length;
+    return promedio;
+}
+
 
 $calcular.onclick = function(){
     $familiares = document.querySelectorAll(".familiares");
@@ -49,11 +68,15 @@ $calcular.onclick = function(){
         edades.push(Number($familiares[i].value));      
     }
     numeroMayor(edades);
-    $em.textContent = "El integrante mas viejo tiene " + mayor + " años."
+    numeroMenor(edades);
+    numeroPromedio(edades);
+    $em.textContent = "El integrante mas viejo tiene " + mayor + " años, el mas joven " + menor + " años y la edad promedio son " + promedio.toFixed(1) + " años."
     return false;
 }
 
-
+$restart.onclick = function(){
+    location.reload();
+}
 
 
 /*
