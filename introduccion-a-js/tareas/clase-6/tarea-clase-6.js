@@ -10,8 +10,7 @@ const $siguiente = document.querySelector("#siguiente");
 const $formulario = document.querySelector("#formulario");
 const $calcular = document.createElement("button");
 let edades = [];
-let $em = document.querySelector("em");
-const $restart = document.createElement("button");
+const $empezarDeNuevo = document.createElement("button");
 
 $siguiente.onclick = function(){
     let $cantidadIntegrantes = document.querySelector("#cantidadIntegrantes").value;    
@@ -26,13 +25,13 @@ $siguiente.onclick = function(){
     }
     $calcular.textContent = "Calcular!";
     $formulario.appendChild($calcular);
-    $restart.textContent = "Empezar de nuevo!";
-    $formulario.appendChild($restart);
+    $empezarDeNuevo.textContent = "Empezar de nuevo!";
+    $formulario.appendChild($empezarDeNuevo);
 
     return false;
 }
 
-function numeroMayor(array){
+function calcularNumeroMayor(array){
     mayor = array[0];
     for (let i = 0; i < array.length; i++) {
         if (mayor < array[i]) {
@@ -42,7 +41,7 @@ function numeroMayor(array){
     return mayor;
 }
 
-function numeroMenor(array){
+function calcularNumeroMenor(array){
     menor = array[0];
     for (let i = 0; i < array.length; i++) {
         if (menor > array[i]) {
@@ -52,7 +51,7 @@ function numeroMenor(array){
     return menor;
 }
 
-function numeroPromedio(array){
+function calcularPromedio(array){
     promedio = 0;
     for (let i = 0; i < array.length; i++) {
         promedio = promedio + array[i];
@@ -67,22 +66,13 @@ $calcular.onclick = function(){
     for (let i = 0; i < $familiares.length; i++) {
         edades.push(Number($familiares[i].value));      
     }
-    numeroMayor(edades);
-    numeroMenor(edades);
-    numeroPromedio(edades);
+    calcularNumeroMayor(edades);
+    calcularNumeroMenor(edades);
+    calcularPromedio(edades);
     $em.textContent = "El integrante mas viejo tiene " + mayor + " años, el mas joven " + menor + " años y la edad promedio son " + promedio.toFixed(1) + " años."
     return false;
 }
 
-$restart.onclick = function(){
+$empezarDeNuevo.onclick = function(){
     location.reload();
 }
-
-
-/*
-TAREA:
-Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
-Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor salario anual, menor salario anual, salario anual promedio y salario mensual promedio.
-
-Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
-*/
