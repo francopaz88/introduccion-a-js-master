@@ -11,8 +11,23 @@ const $formulario = document.querySelector("#formulario");
 const $calcular = document.createElement("button");
 let edades = [];
 const $empezarDeNuevo = document.createElement("button");
+let $resultado = document.querySelector("em");
+const $wrapper = document.createElement("div");
+$formulario.appendChild($wrapper);
+
+function removerCampos(){
+    const $label = document.querySelectorAll("label");
+    const $input = document.querySelectorAll(".familiares");
+    for (let i = 0; i < $label.length; i++) {
+        $label[i].remove();        
+    }
+    for (let i = 0; i < $input.length; i++) {
+        $input[i].remove();        
+    }
+}
 
 $siguiente.onclick = function(){
+    removerCampos();
     let $cantidadIntegrantes = document.querySelector("#cantidadIntegrantes").value;    
     for (let i = 0; i < $cantidadIntegrantes; i++) {
         const $label = document.createElement("label");
@@ -20,8 +35,8 @@ $siguiente.onclick = function(){
         const $input = document.createElement("input");
         $input.type = "number";
         $input.className = "familiares";
-        $formulario.appendChild($label);
-        $formulario.appendChild($input);        
+        $wrapper.appendChild($label);
+        $wrapper.appendChild($input);        
     }
     $calcular.textContent = "Calcular!";
     $formulario.appendChild($calcular);
@@ -69,7 +84,7 @@ $calcular.onclick = function(){
     calcularNumeroMayor(edades);
     calcularNumeroMenor(edades);
     calcularPromedio(edades);
-    $em.textContent = "El integrante mas viejo tiene " + mayor + " años, el mas joven " + menor + " años y la edad promedio son " + promedio.toFixed(1) + " años."
+    $resultado.textContent = "El integrante mas viejo tiene " + mayor + " años, el mas joven " + menor + " años y la edad promedio son " + promedio.toFixed(1) + " años."
     return false;
 }
 
